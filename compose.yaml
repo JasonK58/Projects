@@ -1,5 +1,10 @@
 services:
   web:
     build: .
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./src
+          target: /code/src
     ports:
       - "8000:8000"
