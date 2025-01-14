@@ -10,10 +10,10 @@ home_router = APIRouter()
 
 
 @home_router.get("/")
-def read_root(q: Union[str, None] = None):
+def read_root(query_parameters: Union[str, None] = None):
     """
     Route for landing page.
-    :param q: query parameters (optional)
+    :param query_parameters: query parameters (optional)
     :return: Hello World message and query parameters from request.
     """
-    return {"msg": "Hello World", "q": q}
+    return {"msg": "Hello World", "q": query_parameters}
