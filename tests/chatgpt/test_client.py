@@ -18,9 +18,7 @@ class TestChatGptClient(unittest.TestCase):
     @mock.patch("src.chatgpt.client.OpenAI")
     def test_make_request(self, mock_open_ai):
         """
-        Test
-        :param mock_open_ai:
-        :return:
+        Test a request can be made to the client.
         """
         # Arrange
         content_message = "What is 1 + 1?"
