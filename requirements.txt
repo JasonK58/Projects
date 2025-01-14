@@ -2,3 +2,4 @@ fastapi==0.115.6
 fastapi-cli==0.0.6
 openai==1.57.2
 pylint==3.3.2
+pytest==8.3.4
