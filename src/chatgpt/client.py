@@ -11,7 +11,7 @@ MODEL = "gpt-4o"
 ROLE = "user"
 
 
-class ChatGptClient:
+class ChatGptClient:  # pylint: disable=too-few-public-methods
     """
     ChatGPT client to make server requests
     """
