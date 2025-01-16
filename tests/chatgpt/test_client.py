@@ -36,7 +36,6 @@ class TestChatGptClient(unittest.TestCase):
 
         # Act
         response = client.make_request(content_message)
-        result = response["choices"][0]["message"]["content"]
 
         # Assert
-        self.assertEqual(result, response_message)
+        self.assertEqual(response, response_message)
