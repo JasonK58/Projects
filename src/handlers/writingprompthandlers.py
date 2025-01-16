@@ -17,7 +17,10 @@ def create_writing_prompt(genre: str, keywords: [str] = None) -> str:
     """
     keywords_formatted_string = ",".join(keywords) if keywords else ""
 
-    prompt = f"Create a {genre} writing prompt using the following keywords: {keywords_formatted_string}."
+    prompt = (
+        f"Create a {genre} writing prompt using the following keywords: "
+        f"{keywords_formatted_string}."
+    )
 
     chatgpt_client = ChatGptClient()
     generated_prompt = chatgpt_client.make_request(prompt)
