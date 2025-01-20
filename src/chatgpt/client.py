@@ -8,7 +8,7 @@ from openai import OpenAI
 
 from src.parsers.chatgpt_parsers import parse_chatgpt_single_response
 
-MODEL = "gpt-4o"
+MODEL = "gpt-3.5-turbo"
 ROLE = "user"
 
 
