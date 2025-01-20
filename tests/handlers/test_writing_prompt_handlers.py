@@ -19,23 +19,19 @@ class TestWritingPromptHandlers(unittest.TestCase):
         "Two cops get in over their heads when they stumble upon a heist in action."
     )
 
-    @mock.patch("os.environ", {"OPENAI_API_KEY": "mocked_key"})
-    @mock.patch("src.chatgpt.client.OpenAI")
-    def test_create_writing_prompt_with_keywords(self, mock_open_ai):
+    @mock.patch("google.generativeai.GenerativeModel")
+    def test_create_writing_prompt_with_keywords(self, mock_gemini):
         """
         Test a request can be made to the client when provided keywords.
         """
         # Arrange
         keywords = ["cops", "heist"]
 
-        mock_openai_instance = mock_open_ai.return_value
-
-        mock_chat_completions_create = MagicMock()
-        mock_chat_completions_create.return_value = {
-            "choices": [{"message": {"content": self.GENERATED_PROMPT}}]
-        }
-
-        mock_openai_instance.chat.completions.create = mock_chat_completions_create
+        mock_model_instance = MagicMock()
+        mock_model_instance.generate_content.return_value = MagicMock(
+            text=self.GENERATED_PROMPT
+        )
+        mock_gemini.return_value = mock_model_instance
 
         # Act
         result = create_writing_prompt(self.GENRE, keywords)
@@ -43,21 +39,17 @@ class TestWritingPromptHandlers(unittest.TestCase):
         # Assert
         self.assertEqual(result, self.GENERATED_PROMPT)
 
-    @mock.patch("os.environ", {"OPENAI_API_KEY": "mocked_key"})
-    @mock.patch("src.chatgpt.client.OpenAI")
-    def test_create_writing_prompt_without_keywords(self, mock_open_ai):
+    @mock.patch("google.generativeai.GenerativeModel")
+    def test_create_writing_prompt_without_keywords(self, mock_gemini):
         """
         Test a request can be made to the client when provided no keywords.
         """
         # Arrange
-        mock_openai_instance = mock_open_ai.return_value
-
-        mock_chat_completions_create = MagicMock()
-        mock_chat_completions_create.return_value = {
-            "choices": [{"message": {"content": self.GENERATED_PROMPT}}]
-        }
-
-        mock_openai_instance.chat.completions.create = mock_chat_completions_create
+        mock_model_instance = MagicMock()
+        mock_model_instance.generate_content.return_value = MagicMock(
+            text=self.GENERATED_PROMPT
+        )
+        mock_gemini.return_value = mock_model_instance
 
         # Act
         result = create_writing_prompt(self.GENRE)

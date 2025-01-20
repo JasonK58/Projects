@@ -9,7 +9,7 @@ from unittest.mock import MagicMock
 from src.chatgpt.client import ChatGptClient
 
 
-class TestChatGptClient(unittest.TestCase):
+class TestGptClient(unittest.TestCase):
     """
     ChatGPT client tests
     """
