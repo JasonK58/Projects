@@ -4,9 +4,9 @@ RUN apt-get update
 
 WORKDIR /code
 
-COPY requirements.txt /code/requirements.txt
+COPY backend/requirements.txt /code/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /code
+COPY backend/src /code
 
 CMD ["fastapi", "run", "main.py"]
