@@ -2,7 +2,7 @@
 Handlers to generate writing prompts using ChatGPT.
 """
 
-from src.gemini.client import GoogleGeminiClient
+from ..gemini.client import GoogleGeminiClient
 
 
 def create_writing_prompt(genre: str, keywords: [str] = None) -> str:

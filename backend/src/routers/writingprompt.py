@@ -4,9 +4,9 @@ Writing prompt routes
 
 from fastapi import APIRouter
 
-from src.handlers.writingprompthandlers import create_writing_prompt
-from src.models.requests import WritingPromptRequest
-from src.models.responses import WritingPromptResponse
+from ..handlers.writingprompthandlers import create_writing_prompt
+from ..models.requests import WritingPromptRequest
+from ..models.responses import WritingPromptResponse
 
 writing_prompt_router = APIRouter()
 

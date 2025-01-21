@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from src.chatgpt.client import ChatGptClient
+from backend.src.chatgpt.client import ChatGptClient
 
 
 class TestGptClient(unittest.TestCase):
@@ -15,7 +15,7 @@ class TestGptClient(unittest.TestCase):
     """
 
     @mock.patch("os.environ", {"OPENAI_API_KEY": "mocked_key"})
-    @mock.patch("src.chatgpt.client.OpenAI")
+    @mock.patch("backend.src.chatgpt.client.OpenAI")
     def test_make_request(self, mock_open_ai):
         """
         Test a request can be made to the client.
