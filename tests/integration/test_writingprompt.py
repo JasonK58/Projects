@@ -10,7 +10,7 @@ from unittest.mock import MagicMock
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.src.main import app
+from main import app
 
 
 class TestWritingPrompt(unittest.TestCase):

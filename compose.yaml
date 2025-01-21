@@ -1,12 +1,11 @@
 services:
-  backend:
-    build:
-      dockerfile: backend/Dockerfile
+  web:
+    build: .
     develop:
       watch:
         - action: sync+restart
-          path: backend/src
-          target: /code
-    env_file: "backend/.env"
+          path: ./src
+          target: /code/src
+    env_file: ".env"
     ports:
       - "8000:8000"

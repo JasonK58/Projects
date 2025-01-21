@@ -4,7 +4,7 @@ Project entrypoint
 
 from fastapi import FastAPI
 
-from .routers import home, writingprompt
+from src.routers import home, writingprompt
 
 app = FastAPI()
 

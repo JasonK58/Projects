@@ -6,7 +6,7 @@ import os
 
 from openai import OpenAI
 
-from ..parsers.chatgpt_parsers import parse_chatgpt_single_response
+from src.parsers.chatgpt_parsers import parse_chatgpt_single_response
 
 MODEL = "gpt-3.5-turbo"
 ROLE = "user"
