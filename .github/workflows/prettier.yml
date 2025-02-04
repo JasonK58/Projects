@@ -17,4 +17,4 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: '--check **/*.{vue,js,ts,tsx,json,css}'
+          prettier_options: '--check frontend/src/**/*.{vue,js,ts,tsx,json,css}'
