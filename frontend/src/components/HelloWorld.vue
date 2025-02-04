@@ -2,6 +2,8 @@
 defineProps<{
   msg: string
 }>()
+
+const rebar = 1
 </script>
 
 <template>
