@@ -1,9 +1,6 @@
 name: Prettier
 
-on:
-  push:
-    paths:
-      - frontend/src/**
+on: [ push ]
 
 jobs:
   prettier:
@@ -17,4 +14,4 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: '**/*.{vue,js,ts,tsx,json,css}'
+          prettier_options: 'frontend/src/**.{vue,js,ts,tsx,json,css}'
