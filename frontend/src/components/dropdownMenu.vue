@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps<{
+  placeholderOption?: string
   options: string[]
 }>()
 
@@ -8,7 +9,7 @@ const selectedOption = defineModel()
 
 <template>
   <select class="select" v-model="selectedOption">
-    <option value="">Select a genre</option>
+    <option v-if="placeholderOption" value="">{{ placeholderOption }}</option>
     <option class="option" v-for="option in options" :value="option" :key="option">
       {{ option }}
     </option>
