@@ -4,11 +4,15 @@ import Logo from '@/assets/books.svg'
 import DropdownMenu from '@/components/dropdownMenu.vue'
 import { ref } from 'vue'
 
-const selectedOption = ref('')
+const selectedGenre = ref('')
 </script>
 
 <template>
   <AppHeader msg="Writing Prompt Generator" :logo="Logo" />
 
-  <DropdownMenu v-model="selectedOption" :options="['horror', 'comedy', 'mystery']" />
+  <DropdownMenu
+    v-model="selectedGenre"
+    :options="['horror', 'comedy', 'mystery']"
+    placeholder-option="Select a genre"
+  />
 </template>

@@ -5,7 +5,7 @@ import AppHeader from '@/components/AppHeader.vue'
 import Logo from '@/assets/books.svg'
 
 describe('AppHeader', () => {
-  const msg = 'Hello Vitest'
+  const msg = 'message'
   it('renders message', () => {
     const wrapper = mount(AppHeader, { props: { msg: msg, logo: Logo } })
     expect(wrapper.text()).toContain(msg)
