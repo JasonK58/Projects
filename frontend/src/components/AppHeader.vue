@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineProps<{
   msg: string
+  logo?: string
 }>()
 </script>
 
 <template>
   <div class="header">
-    <img alt="logo" class="logo" src="@/assets/books.svg" width="300" height="125" />
+    <img v-if="logo" alt="logo" class="logo" :src="logo" width="300" height="125" />
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -14,12 +15,10 @@ defineProps<{
 <style scoped>
 .header {
   width: 33rem;
-  border: 1px solid white;
-  margin: 0 auto;
-  margin-top: 1rem !important;
-  padding: 0;
-  height: 100vh;
+  margin-top: 1rem;
+  padding: 0 1.5rem;
 }
+
 .header img {
   float: left;
   width: 10rem;
@@ -28,6 +27,6 @@ defineProps<{
 
 .header h1 {
   text-align: left;
-  margin-top: 3rem;
+  font-size: 3rem;
 }
 </style>
