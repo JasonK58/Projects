@@ -20,5 +20,5 @@ const textInputs = ref([''])
     placeholder-option="Select a genre"
   />
 
-  <div><TextInput :max-length="maxLength" :max-inputs="maxInputs" v-model="textInputs" /></div>
+  <TextInput :max-length="maxLength" :max-inputs="maxInputs" v-model="textInputs" />
 </template>
