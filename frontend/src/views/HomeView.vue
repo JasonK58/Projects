@@ -3,8 +3,12 @@ import AppHeader from '@/components/AppHeader.vue'
 import Logo from '@/assets/books.svg'
 import DropdownMenu from '@/components/dropdownMenu.vue'
 import { ref } from 'vue'
+import TextInput from '@/components/TextInput.vue'
 
+const maxLength = 20
+const maxInputs = 5
 const selectedGenre = ref('')
+const textInputs = ref([''])
 </script>
 
 <template>
@@ -15,4 +19,6 @@ const selectedGenre = ref('')
     :options="['horror', 'comedy', 'mystery']"
     placeholder-option="Select a genre"
   />
+
+  <TextInput :max-length="maxLength" :max-inputs="maxInputs" v-model="textInputs" />
 </template>
