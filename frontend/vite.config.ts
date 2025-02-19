@@ -8,6 +8,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig({
   plugins: [vue(), vueJsx()],
   server: {
+    allowedHosts: ['frontend'],
     watch: {
       usePolling: true,
     },
