@@ -9,7 +9,7 @@ from fastapi import APIRouter
 home_router = APIRouter()
 
 
-@home_router.get("/")
+@home_router.get("/root/")
 def read_root(query_parameters: Union[str, None] = None):
     """
     Route for landing page.
