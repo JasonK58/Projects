@@ -14,9 +14,10 @@ defineProps<{
 
 <style scoped>
 .header {
-  width: 33rem;
-  margin-top: 1rem;
-  padding: 0 1.5rem;
+  width: 40%;
+  height: 100%;
+  top: 1em;
+  margin-left: 33%;
 }
 
 .header img {
@@ -27,6 +28,7 @@ defineProps<{
 
 .header h1 {
   text-align: left;
-  font-size: 3rem;
+  font-size: 3.2em;
+  margin-left: 4em;
 }
 </style>

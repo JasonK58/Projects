@@ -5,8 +5,12 @@ type RequestBody = {
   keywords: string[]
 }
 
+interface ResponseBody {
+  msg: string
+}
+
 export function useApi() {
-  const results = ref(null)
+  const results = ref<ResponseBody>({ msg: '' })
   const error = ref('')
 
   const makePostRequest = async (url: string, body: RequestBody) => {
