@@ -21,6 +21,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 app.include_router(home.home_router)
 app.include_router(writingprompt.writing_prompt_router)
