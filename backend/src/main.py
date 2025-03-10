@@ -10,7 +10,7 @@ from .routers import home, writingprompt
 app = FastAPI(root_path="/api/v1")
 
 origins = [
-    "http://localhost/",
+    "https://localhost",
 ]
 
 app.add_middleware(
