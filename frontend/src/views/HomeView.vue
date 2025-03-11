@@ -13,7 +13,7 @@ const apiUrl = import.meta.env.VITE_API_URL
 const selectedGenre = ref('')
 const textInputs = ref([''])
 const displayText = ref('')
-const { makePostRequest, results, error } = useApi()
+const { makePostRequest, response, error } = useApi()
 
 async function makeRequest() {
   await makePostRequest(apiUrl + 'writingprompt', {
@@ -21,7 +21,7 @@ async function makeRequest() {
     keywords: textInputs.value,
   })
 
-  displayText.value = results.value.msg
+  displayText.value = response.value
 }
 </script>
 
