@@ -2,7 +2,7 @@
 Writing prompt routes
 """
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 
 from ..handlers.writingprompthandlers import create_writing_prompt
 from ..models.requests import WritingPromptRequest
@@ -20,6 +20,13 @@ def create_prompt(prompt_request: WritingPromptRequest) -> WritingPromptResponse
     :return: AI generated writing prompt
     :rtype: WritingPromptResponse
     """
+
+    if not prompt_request.genre:
+        raise HTTPException(
+            status_code=422,
+            detail="Please provide a genre to generate a writing prompt.",
+        )
+
     generated_prompt = create_writing_prompt(
         prompt_request.genre, prompt_request.keywords
     )
