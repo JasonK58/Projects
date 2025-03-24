@@ -12,7 +12,7 @@ class GoogleGeminiClient:  # pylint: disable=too-few-public-methods
     Client to make requests to Google Gemini.
     """
 
-    MODEL = "gemini-1.5-flash"
+    MODEL = os.environ.get("GEMINI_MODEL")
 
     def __init__(self):
         genai.configure(api_key=os.getenv("GEMINI_API_KEY"))

@@ -4,11 +4,8 @@ services:
       context: backend
       dockerfile: Dockerfile
     container_name: backend
-    develop:
-      watch:
-        - action: sync+restart
-          path: backend/src
-          target: /code
+    volumes:
+      - ./backend/src:/code
     env_file: "backend/.env"
     ports:
       - "8000:8000"

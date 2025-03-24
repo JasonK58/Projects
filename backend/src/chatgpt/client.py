@@ -8,8 +8,8 @@ from openai import OpenAI
 
 from ..parsers.chatgpt_parsers import parse_chatgpt_single_response
 
-MODEL = "gpt-3.5-turbo"
-ROLE = "user"
+MODEL = os.environ.get("CHATGPT_MODEL")
+ROLE = os.environ.get("CHATGPT_ROLE")
 
 
 class ChatGptClient:  # pylint: disable=too-few-public-methods

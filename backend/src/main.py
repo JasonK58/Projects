@@ -2,6 +2,8 @@
 Project entrypoint
 """
 
+import os
+
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
@@ -9,9 +11,7 @@ from .routers import home, writingprompt
 
 app = FastAPI(root_path="/api/v1")
 
-origins = [
-    "https://localhost",
-]
+origins = os.environ.get("WHITELIST_ORIGINS")
 
 app.add_middleware(
     CORSMiddleware,
