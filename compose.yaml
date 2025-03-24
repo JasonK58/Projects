@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: backend
     volumes:
-      - ./backend/src:/code
+      - ./backend/src:/app/src
     env_file: "backend/.env"
     ports:
       - "8000:8000"

@@ -2,11 +2,11 @@ FROM python:3.13-slim
 
 RUN apt-get update
 
-WORKDIR /code
+WORKDIR /app
 
-COPY requirements.txt /code/requirements.txt
+COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY /src /code
+COPY . /app
 
-CMD ["fastapi", "run", "main.py"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
