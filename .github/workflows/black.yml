@@ -13,4 +13,4 @@ jobs:
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "./writingpromts/backend/src"
+          src: "./writingprompts/backend/src"
