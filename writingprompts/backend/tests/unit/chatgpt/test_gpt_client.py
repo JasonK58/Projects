@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from backend.src.chatgpt.client import ChatGptClient
+from writingprompts.backend.src.chatgpt.client import ChatGptClient
 
 
 class TestGptClient(unittest.TestCase):

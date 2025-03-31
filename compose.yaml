@@ -1,21 +1,21 @@
 services:
-  backend:
+  writing_prompts_backend:
     build:
-      context: backend
+      context: writingprompts/backend
       dockerfile: Dockerfile
-    container_name: backend
+    container_name: writing_prompts_backend
     volumes:
-      - ./backend/src:/app/src
-    env_file: "backend/.env"
+      - ./writingprompts/backend/src:/app/src
+    env_file: "writingprompts/backend/.env"
     ports:
       - "8000:8000"
-  frontend:
+  writing_prompts_frontend:
     build:
-      context: frontend
+      context: writingprompts/frontend
       dockerfile: Dockerfile
-    container_name: frontend
+    container_name: writing_prompts_frontend
     volumes:
-      - ./frontend:/app
+      - ./writingprompts/frontend:/app
       - /app/node_modules
     ports:
       - "8080:8080"
@@ -27,5 +27,5 @@ services:
     ports:
       - "443:443"
     depends_on:
-      - backend
-      - frontend
+      - writing_prompts_backend
+      - writing_prompts_frontend

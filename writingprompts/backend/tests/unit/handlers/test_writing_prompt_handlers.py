@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from backend.src.handlers.writingprompthandlers import create_writing_prompt
+from writingprompts.backend.src.handlers.writingprompthandlers import create_writing_prompt
 
 
 class TestWritingPromptHandlers(unittest.TestCase):

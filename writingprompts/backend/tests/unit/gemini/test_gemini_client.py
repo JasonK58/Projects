@@ -6,7 +6,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from backend.src.gemini.client import GoogleGeminiClient
+from writingprompts.backend.src.gemini.client import GoogleGeminiClient
 
 
 class TestGeminiClient(unittest.TestCase):
