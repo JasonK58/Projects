@@ -5,7 +5,7 @@ Unit tests for ChatGPT parsers
 import unittest
 from unittest.mock import MagicMock
 
-from backend.src.parsers.chatgpt_parsers import parse_chatgpt_single_response
+from writingprompts.backend.src.parsers.chatgpt_parsers import parse_chatgpt_single_response
 
 
 class TestChatGPTParsers(unittest.TestCase):

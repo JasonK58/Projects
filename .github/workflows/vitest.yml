@@ -3,14 +3,14 @@ name: 'Vitest'
 on:
   push:
     paths:
-      - frontend/**
+      - writingprompts/frontend/**
 
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: ./writingprompts/frontend
 
     permissions:
       contents: read
