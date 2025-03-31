@@ -3,14 +3,14 @@ name: 'Pytest'
 on:
   push:
     paths:
-      - backend/**
+      - writingprompts/backend/**
 
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./writingprompts/backend
 
     steps:
       - uses: actions/checkout@v4

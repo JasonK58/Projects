@@ -3,7 +3,7 @@ name: Prettier
 on:
   push:
     paths:
-      - frontend/src/**
+      - writingprompts/frontend/src/**
 
 jobs:
   prettier:
@@ -17,4 +17,4 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.3
         with:
-          prettier_options: '--check frontend/src/**/*.{vue,js,ts,tsx,json,css}'
+          prettier_options: '--check writingprompts/frontend/src/**/*.{vue,js,ts,tsx,json,css}'

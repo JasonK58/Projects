@@ -3,7 +3,7 @@ name: Black
 on:
   push:
     paths:
-      - backend/**
+      - writingprompts/backend/**
 
 jobs:
   lint:
@@ -13,4 +13,4 @@ jobs:
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "./backend/src"
+          src: "./writingpromts/backend/src"
