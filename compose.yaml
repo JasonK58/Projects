@@ -1,4 +1,14 @@
 services:
+  home_app:
+    build:
+      context: home-app
+      dockerfile: Dockerfile
+    container_name: home-app
+    volumes:
+      - ./home-app/:/app
+      - /app/node_modules
+    ports:
+      - "8081:8081"
   writing_prompts_backend:
     build:
       context: writingprompts/backend
@@ -27,5 +37,6 @@ services:
     ports:
       - "443:443"
     depends_on:
+      - home_app
       - writing_prompts_backend
       - writing_prompts_frontend
