@@ -1,6 +1,6 @@
 fastapi==0.115.6
 fastapi-cli==0.0.6
-google-generativeai==0.8.3
+google-genai==1.10.0
 openai==1.57.2
 pydantic~=2.10.3
 pylint==3.3.2

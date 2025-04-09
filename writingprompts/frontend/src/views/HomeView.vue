@@ -21,7 +21,7 @@ async function makeRequest() {
     keywords: textInputs.value,
   })
 
-  displayText.value = response.value
+  displayText.value = error.value ? '' : response.value
 }
 </script>
 

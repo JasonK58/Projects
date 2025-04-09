@@ -27,7 +27,7 @@ class TestWritingPrompt(unittest.TestCase):
         """
         self.client = TestClient(app)  # pylint: disable=attribute-defined-outside-init
 
-    @mock.patch("google.generativeai.GenerativeModel")
+    @mock.patch("google.genai.Client")
     def test_create_prompt(self, mock_gemini):
         """
         Test a valid request to the client returns expected response.
@@ -41,7 +41,7 @@ class TestWritingPrompt(unittest.TestCase):
         )
 
         mock_model_instance = MagicMock()
-        mock_model_instance.generate_content.return_value = MagicMock(
+        mock_model_instance.models.generate_content.return_value = MagicMock(
             text=response_text
         )
         mock_gemini.return_value = mock_model_instance
@@ -56,7 +56,7 @@ class TestWritingPrompt(unittest.TestCase):
         for key in keywords:
             self.assertIn(key, data["msg"])
 
-    @mock.patch("google.generativeai.GenerativeModel")
+    @mock.patch("google.genai.Client")
     def test_create_prompt_no_keywords(self, mock_gemini):
         """
         Test a valid request to the client without keywords returns expected response.
@@ -66,7 +66,7 @@ class TestWritingPrompt(unittest.TestCase):
         response_text = "Shenanigans occur on a man's first day as a daycare owner."
 
         mock_model_instance = MagicMock()
-        mock_model_instance.generate_content.return_value = MagicMock(
+        mock_model_instance.models.generate_content.return_value = MagicMock(
             text=response_text
         )
         mock_gemini.return_value = mock_model_instance
