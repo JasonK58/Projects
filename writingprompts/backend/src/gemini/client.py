@@ -4,7 +4,9 @@ Google Gemini AI client.
 
 import os
 
-import google.generativeai as genai
+from fastapi import HTTPException
+from google import genai
+from google.genai.errors import APIError
 
 
 class GoogleGeminiClient:  # pylint: disable=too-few-public-methods
@@ -15,8 +17,7 @@ class GoogleGeminiClient:  # pylint: disable=too-few-public-methods
     MODEL = os.environ.get("GEMINI_MODEL")
 
     def __init__(self):
-        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-        self.model = genai.GenerativeModel(self.MODEL)
+        self.client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
     def make_request(self, query: str) -> str:
         """
@@ -26,6 +27,11 @@ class GoogleGeminiClient:  # pylint: disable=too-few-public-methods
         :return: Response from Gemini
         :rtype: str
         """
-        response = self.model.generate_content(query)
+        try:
+            response = self.client.models.generate_content(
+                model=self.MODEL, contents=query
+            )
+        except APIError as e:
+            raise HTTPException(status_code=e.code, detail=e.message) from e
 
         return response.text
