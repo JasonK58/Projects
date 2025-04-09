@@ -2,18 +2,17 @@
 Unit Tests for Google Gemini client.
 """
 
-import unittest
-from fastapi.exceptions import HTTPException
-from unittest import mock
+from unittest import mock, TestCase
 from unittest.mock import MagicMock
 
 import pytest
+from fastapi.exceptions import HTTPException
 from google.genai.errors import APIError
 
 from writingprompts.backend.src.gemini.client import GoogleGeminiClient
 
 
-class TestGeminiClient(unittest.TestCase):
+class TestGeminiClient(TestCase):
     """
     Gemini client tests
     """
