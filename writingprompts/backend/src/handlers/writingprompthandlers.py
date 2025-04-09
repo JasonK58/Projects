@@ -18,7 +18,8 @@ def create_writing_prompt(genre: str, keywords: [str] = None) -> str:
     keywords_formatted_string = ",".join(keywords) if keywords else ""
 
     query = (
-        f"Create a {genre} one sentence writing prompt using the following keywords, (if there are any): "
+        f"Create a {genre} one sentence writing prompt using the "
+        f"following keywords, (if there are any): "
         f"{keywords_formatted_string}."
     )
 
