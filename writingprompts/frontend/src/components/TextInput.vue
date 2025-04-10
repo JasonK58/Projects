@@ -47,16 +47,17 @@ function RemoveInputField(index: number) {
 
 <style scoped>
 .input-element {
-  margin-top: 0.5rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0.5rem;
 }
+
 .input-field {
   font-size: 24px;
   border: 2px solid black;
   border-radius: 5px;
   float: left;
-  margin-bottom: 0.5rem;
-  width: calc((v-bind(maxLength) + 1) * 1ch);
 }
 
 .image-container {
