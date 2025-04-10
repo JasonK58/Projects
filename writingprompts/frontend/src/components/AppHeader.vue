@@ -8,27 +8,33 @@ defineProps<{
 <template>
   <div class="header">
     <img v-if="logo" alt="logo" class="logo" :src="logo" width="300" height="125" />
-    <h1>{{ msg }}</h1>
+    <span>{{ msg }}</span>
   </div>
 </template>
 
 <style scoped>
 .header {
-  width: 40%;
-  height: 100%;
-  top: 1em;
-  margin-left: 33%;
+  top: 1rem;
+  margin-left: 1rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header img {
-  float: left;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: auto;
 }
 
-.header h1 {
+.header span {
   text-align: left;
   font-size: 3.2em;
-  margin-left: 4em;
+}
+
+@media screen and (max-width: 479px) {
+  .header span {
+    font-size: 1.9rem;
+  }
 }
 </style>
