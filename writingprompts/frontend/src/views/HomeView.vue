@@ -31,13 +31,12 @@ async function makeRequest() {
   </div>
 
   <div id="settings_wrapper">
-    <div id="dropdown">
-      <DropdownMenu
-        v-model="selectedGenre"
-        :options="['horror', 'comedy', 'mystery']"
-        placeholder-option="Select a genre"
-      />
-    </div>
+    <DropdownMenu
+      id="genre_dropdown"
+      v-model="selectedGenre"
+      :options="['horror', 'comedy', 'mystery']"
+      placeholder-option="Select a genre"
+    />
 
     <div id="text_inputs">
       <span>Provide zero to five keywords to use:</span>
@@ -59,16 +58,6 @@ async function makeRequest() {
   width: 100%;
   height: 14em;
   margin-top: 1em;
-}
-#settings_wrapper {
-  width: 50%;
-  margin-left: 35%;
-  height: 100%;
-}
-
-#dropdown {
-  width: 49%;
-  margin-bottom: 1em;
 }
 
 #text_inputs {

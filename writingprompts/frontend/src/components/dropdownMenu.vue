@@ -8,7 +8,7 @@ const selectedOption = defineModel<string>()
 </script>
 
 <template>
-  <div>
+  <div class="select-wrapper">
     <select class="select" v-model="selectedOption">
       <option v-if="placeholderOption" value="">{{ placeholderOption }}</option>
       <option class="option" v-for="option in options" :value="option" :key="option">
@@ -19,10 +19,15 @@ const selectedOption = defineModel<string>()
 </template>
 
 <style scoped>
-select {
-  height: 3rem;
-  width: 100%;
-  border: 1px solid black;
-  font-size: 22px;
+.select-wrapper {
+  display: flex;
+}
+
+.select {
+  font-size: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin: auto;
+  width: 20rem;
 }
 </style>
