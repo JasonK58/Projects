@@ -44,8 +44,6 @@ async function makeRequest() {
     </div>
   </div>
 
-  <div style="clear: both"></div>
-
   <div id="submit_button">
     <SubmitButton msg="Generate Writing Prompt" @click="makeRequest()" />
   </div>
@@ -61,23 +59,30 @@ async function makeRequest() {
 }
 
 #text_inputs {
-  margin-bottom: 4em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 #text_inputs span {
   font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 }
 
 #submit_button {
-  width: 20%;
-  margin-left: 35%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .result {
   margin-top: 1em;
-  width: 50%;
-  margin-left: 25%;
   font-size: 1.5em;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 #error {
