@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   base: '/writing-prompts',
   server: {
-    allowedHosts: ['frontend'],
+    allowedHosts: ['frontend', 'jasonkolenosky.ca'],
     watch: {
       usePolling: true,
     },

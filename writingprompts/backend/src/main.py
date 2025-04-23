@@ -2,6 +2,7 @@
 Project entrypoint
 """
 
+import json
 import os
 
 from fastapi import FastAPI
@@ -13,7 +14,7 @@ app = FastAPI(root_path="/api/v1")
 
 # Pytest is not reading the values from env, so a fallback of 'testing' is
 # used to ensure the value is not empty when running the test suite.
-origins = os.environ.get("WHITELIST_ORIGINS", "testing")
+origins = json.loads(os.getenv("WHITELIST_ORIGINS", '["testing"]'))
 
 app.add_middleware(
     CORSMiddleware,
