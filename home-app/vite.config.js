@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   server: {
-    allowedHosts: ["home-app", "jasonkolenosky.ca"],
+    allowedHosts: ["home-app", "jasonkolenosky.ca", "www.jasonkolenosky.ca"],
     watch: {
       usePolling: true,
     },
