@@ -17,5 +17,12 @@ defineProps({
   text-align: center;
   width: 15em;
   background-color: #55c2da;
+  font-size: 1.5em;
+}
+
+@media (prefers-color-scheme: dark) {
+  #submit {
+    color: black;
+  }
 }
 </style>

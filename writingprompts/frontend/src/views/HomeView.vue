@@ -88,4 +88,16 @@ async function makeRequest() {
 #error {
   color: red;
 }
+
+@media screen and (max-width: 479px) {
+  #text_inputs span {
+    font-size: 1.3em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #text_inputs span {
+    color: white;
+  }
+}
 </style>

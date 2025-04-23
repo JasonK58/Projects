@@ -25,7 +25,13 @@ header {
 
 @media screen and (max-width: 479px) {
   header {
-    font-size: 1rem;
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    color: black;
   }
 }
 </style>

@@ -34,7 +34,19 @@ defineProps<{
 
 @media screen and (max-width: 479px) {
   .header span {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    color: white;
+  }
+  .header {
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header img {
+    filter: invert(1%) brightness(8000%);
   }
 }
 </style>

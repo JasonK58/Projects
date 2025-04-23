@@ -13,5 +13,6 @@ defineProps<{
   font-size: 2rem;
   width: 100%;
   padding: 1rem 0 1rem 0;
+  color: black;
 }
 </style>
