@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { sanitizeString } from '@/composables/sanitize.ts'
+
 defineProps<{
   maxLength: number
   maxInputs: number
 }>()
 
 const textInputs = defineModel<string[]>({ default: [''] })
+
+function sanitizeInput(event: Event, index: number) {
+  const target = event.target as HTMLInputElement
+  textInputs.value[index] = sanitizeString(target.value)
+}
 
 function AddInputField(value: string) {
   if (value) {
@@ -23,8 +30,9 @@ function RemoveInputField(index: number) {
       class="input-field"
       type="text"
       :maxlength="maxLength"
-      @keydown.space.prevent
-      v-model="textInputs[index]"
+      :value="textInputs[index]"
+      @input="sanitizeInput($event, index)"
+      :placeholder="`max ${maxLength} characters`"
     />
     <div class="image-container">
       <div
@@ -63,7 +71,6 @@ function RemoveInputField(index: number) {
 .image-container {
   height: 2rem;
   display: flex;
-  float: left;
   margin-left: 0.2rem;
   margin-top: 0.05rem;
   object-fit: contain;
@@ -82,10 +89,28 @@ function RemoveInputField(index: number) {
 
 .add-field {
   background-color: lightgreen;
+  margin-left: 2px;
 }
 
 .remove-field {
   background-color: lightcoral;
+  margin-left: 4px;
   margin-right: 2px;
+}
+
+@media screen and (max-width: 479px) {
+  .input-element {
+    width: 95%;
+  }
+
+  .input-field {
+    width: 75%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .field-button {
+    color: black;
+  }
 }
 </style>
