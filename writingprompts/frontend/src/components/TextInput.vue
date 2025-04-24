@@ -30,7 +30,7 @@ function RemoveInputField(index: number) {
       class="input-field"
       type="text"
       :maxlength="maxLength"
-      :value="textInputs[index]"
+      v-model="textInputs[index]"
       @input="sanitizeInput($event, index)"
       :placeholder="`max ${maxLength} characters`"
     />
