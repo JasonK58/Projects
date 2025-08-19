@@ -14,8 +14,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - working-directory: ./home-app
-      - run: npm install
+      - name: Install packages
+        working-directory: ./home-app
+        run: npm install
       - name: Run ESLint on home-app
         run: npm run githublint
       - name: Run ESLint on writingprompts
