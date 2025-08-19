@@ -16,4 +16,12 @@ describe("AppHeader", () => {
     expect(wrapper.text()).toContain(title);
     expect(wrapper.text()).toContain(location);
   });
+
+  it("renders image", () => {
+    const wrapper = mount(AppHeader, {
+      props: { name: name, title: title, location: location },
+    });
+    const image = wrapper.find("img");
+    expect(image.exists()).toBe(true);
+  });
 });
