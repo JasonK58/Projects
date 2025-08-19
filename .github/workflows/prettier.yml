@@ -3,6 +3,7 @@ name: Prettier
 on:
   push:
     paths:
+      - home-app/src/**
       - writingprompts/frontend/src/**
 
 jobs:
@@ -14,7 +15,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
-      - name: Prettify code
+      - name: Prettify home-app code
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: '--check home-app/src/**/*.{vue,js,ts,tsx,json,css}'
+      - name: Prettify writingprompts code
         uses: creyD/prettier_action@v4.3
         with:
           prettier_options: '--check writingprompts/frontend/src/**/*.{vue,js,ts,tsx,json,css}'

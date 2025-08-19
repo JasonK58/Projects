@@ -3,19 +3,21 @@ name: ESLint
 on:
   push:
     paths:
+      - home-app/src/**
       - writingprompts/frontend/src/**
 
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./writingprompts/frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm install
-      - name: Run ESLint
+      - name: Run ESLint on home-app
+        working-directory: ./home-app
+        run: npm run githublint
+      - name: Run ESLint on writingprompts
+        working-directory: ./writingprompts/frontend
         run: npm run githublint

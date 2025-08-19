@@ -3,6 +3,7 @@ name: 'Vitest'
 on:
   push:
     paths:
+      - home-app/src/**
       - writingprompts/frontend/**
 
 jobs:
@@ -23,5 +24,9 @@ jobs:
           node-version: '20.x'
       - name: 'Install Deps'
         run: npm install
-      - name: 'Test'
+      - name: Run tests on home-app
+        working-directory: ./home-app
+        run: npx vitest
+      - name: Run tests on writingprompts
+        working-directory: ./writingprompts/frontend
         run: npx vitest
