@@ -9,24 +9,25 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./writingprompts/frontend
 
     permissions:
       contents: read
 
     steps:
       - uses: actions/checkout@v4
-      - name: 'Install Node'
+      - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-      - name: 'Install Deps'
+      - name: Install home-app Deps
+        working-directory: ./home-app
         run: npm install
       - name: Run tests on home-app
         working-directory: ./home-app
         run: npx vitest
+      - name: Install writingprompts Deps
+        working-directory: ./writingprompts/frontend
+        run: npm install
       - name: Run tests on writingprompts
         working-directory: ./writingprompts/frontend
         run: npx vitest
