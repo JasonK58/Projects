@@ -14,12 +14,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install packages
+      - name: Install home-app packages
         working-directory: ./home-app
         run: npm install
       - name: Run ESLint on home-app
         working-directory: ./home-app
-        run: npm run githublint
+        run: npx run githublint
+      - name: Install writingprompts packages
+        working-directory: ./writingprompts/frontend
+        run: npm install
       - name: Run ESLint on writingprompts
         working-directory: ./writingprompts/frontend
-        run: npm run githublint
+        run: npx run githublint

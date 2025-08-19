@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import foo from "../assets/images/location-pin.svg";
-
 defineProps<{
   name: string;
   title: string;
