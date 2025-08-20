@@ -20,5 +20,6 @@ defineProps<{
   text-align: left;
   padding-left: var(--text-padding);
   margin-top: 1rem;
+  clear: both;
 }
 </style>

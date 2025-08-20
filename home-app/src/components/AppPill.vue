@@ -13,11 +13,11 @@ defineProps<{
 
 <style scoped>
 .pill {
-  display: inline-flex;
+  display: flex;
   border: 3px solid black;
   border-radius: 5px;
   background-color: #f79e2f;
-  margin-left: var(--text-padding);
+  margin: 0 0 var(--text-padding) var(--text-padding);
   float: left;
 }
 
