@@ -1,18 +1,24 @@
 <script setup lang="ts">
+import SectionBreak from "./SectionBreak.vue";
+
 defineProps<{
   title: string;
 }>();
 </script>
 
 <template>
-  <div class="heading-title">{{ title }}</div>
+  <div class="heading-title">
+    {{ title }}
+  </div>
+  <SectionBreak />
 </template>
 
 <style scoped>
 .heading-title {
   font-size: 2rem;
-  width: 100%;
-  padding: 1rem 0 1rem 0;
   color: black;
+  text-align: left;
+  padding-left: var(--text-padding);
+  margin-top: 1rem;
 }
 </style>

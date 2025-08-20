@@ -10,7 +10,7 @@
     "test:unit": "vitest",
     "lint": "eslint . --fix",
     "githublint": "eslint src --no-fix",
-    "format": "prettier --write src/"
+    "format": "prettier --check src/"
   },
   "dependencies": {
     "@vue/test-utils": "^2.4.6",

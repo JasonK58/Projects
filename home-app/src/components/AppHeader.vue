@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import foo from "../assets/images/location-pin.svg";
+import locationPin from "../assets/images/location-pin.svg";
+
 defineProps<{
   name: string;
   title: string;
@@ -18,7 +19,7 @@ defineProps<{
     <hr />
     <div id="location">
       <div>
-        <img :src="foo" alt="location-pin" />
+        <img :src="locationPin" alt="location-pin" />
         <span>{{ location }}</span>
       </div>
     </div>
@@ -27,7 +28,6 @@ defineProps<{
 
 <style scoped>
 header {
-  --text-padding: 15px;
   background-color: #f6dea0;
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +43,7 @@ header {
 }
 
 #name span {
-  margin-left: var(--text-padding);
+  padding-left: var(--text-padding);
 }
 
 #title {
@@ -56,7 +56,7 @@ header {
 }
 
 #title span {
-  margin-right: var(--text-padding);
+  padding-right: var(--text-padding);
   height: auto;
 }
 
@@ -74,7 +74,7 @@ hr {
 }
 
 #location div img {
-  margin-left: var(--text-padding);
+  padding-left: var(--text-padding);
   margin-right: 3px;
   width: 2.5vh;
 }
