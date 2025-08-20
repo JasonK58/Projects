@@ -17,6 +17,8 @@ defineProps<{
   border: 3px solid black;
   border-radius: 5px;
   background-color: #f79e2f;
+  margin-left: var(--text-padding);
+  float: left;
 }
 
 .pill:hover {
